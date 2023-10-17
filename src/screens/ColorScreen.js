@@ -9,23 +9,23 @@ const ColorScreen = () => {
     const [green, setGreen] = useState(0);
     const [blue, setBlue] = useState(0);
 
-    console.log(red);
+    const color = `rgb(${red}, ${green}, ${blue})`;
 
     return (
         <View>
             <ColorChangers color='Red'
-                increseColor={() => setRed(red + 1)}
-                decreaseColor={() => setRed(red - 1)}
+                increseColor={() => setRed(red + 10)}
+                decreaseColor={() => setRed(red - 10)}
             />
             <ColorChangers color='Green'
-                increseColor={() => setGreen(green + 1)}
-                decreaseColor={() => setGreen(green - 1)}
+                increseColor={() => setGreen(green + 10)}
+                decreaseColor={() => setGreen(green - 10)}
             />
             <ColorChangers color='Blue'
-                increseColor={() => setBlue(blue + 1)}
-                decreaseColor={() => setBlue(blue - 1)}
+                increseColor={() => setBlue(blue + 10)}
+                decreaseColor={() => setBlue(blue - 10)}
             />
-            <ColorSquare />
+            <ColorSquare bgColor={color} />
         </View>
     )
 }
