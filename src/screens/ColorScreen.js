@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import ColorChangers from '../Components/ColorChangers'
+import ColorSquare from '../Components/ColorSquare';
 
 const ColorScreen = () => {
 
@@ -24,6 +25,7 @@ const ColorScreen = () => {
                 increseColor={() => setBlue(blue + 1)}
                 decreaseColor={() => setBlue(blue - 1)}
             />
+            <ColorSquare />
         </View>
     )
 }
