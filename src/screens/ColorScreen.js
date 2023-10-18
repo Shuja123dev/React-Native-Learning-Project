@@ -11,19 +11,26 @@ const ColorScreen = () => {
 
     const color = `rgb(${red}, ${green}, ${blue})`;
 
+    const setColor = (color, setter) => {
+        if (color < 0 || color > 255) {
+            return;
+        }
+        setter(color);
+    }
+
     return (
         <View>
             <ColorChangers color='Red'
-                increseColor={() => setRed(red + 10)}
-                decreaseColor={() => setRed(red - 10)}
+                increseColor={() => setColor(red + 1, setRed)}
+                decreaseColor={() => setColor(red - 1, setRed)}
             />
             <ColorChangers color='Green'
-                increseColor={() => setGreen(green + 10)}
-                decreaseColor={() => setGreen(green - 10)}
+                increseColor={() => setColor(green + 1, setGreen)}
+                decreaseColor={() => setColor(green - 1, setGreen)}
             />
             <ColorChangers color='Blue'
-                increseColor={() => setBlue(blue + 10)}
-                decreaseColor={() => setBlue(blue - 10)}
+                increseColor={() => setColor(blue + 1, setBlue)}
+                decreaseColor={() => setColor(blue - 1, setBlue)}
             />
             <ColorSquare bgColor={color} />
         </View>
