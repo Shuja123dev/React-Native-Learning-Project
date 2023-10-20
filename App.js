@@ -6,6 +6,7 @@ import Home from './src/screens/Home';
 import Component1 from './src/Component1';
 import ColorScreen from './src/screens/ColorScreen';
 import ReducerComp from './src/Components/ReducerComp';
+import TextScreen from './src/screens/TextScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name='Text Input' component={TextScreen} />
         <Stack.Screen name='Color Screen' component={ReducerComp} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -8,13 +8,13 @@ const changeAmout = 10;
 const reducer = (state, action) => {
     switch (action.type) {
         case 'red': {
-            return { ...state, red: state.red + action.paylod }
+            return (state.red + action.paylod > 255 || state.red + action.paylod < 0) ? state : { ...state, red: state.red + action.paylod };
         }
         case 'green': {
-            return { ...state, green: state.green + action.paylod }
+            return (state.green + action.paylod > 255 || state.green + action.paylod < 0) ? state : { ...state, green: state.green + action.paylod };
         }
         case 'blue': {
-            return { ...state, blue: state.blue + action.paylod }
+            return (state.blue + action.paylod > 255 || state.blue + action.paylod < 0) ? state : { ...state, blue: state.blue + action.paylod };
         }
         default: {
             return state;
